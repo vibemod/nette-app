@@ -1,0 +1,36 @@
+{block #content}
+
+<div style="background-color: #00ffff; color: #000000; font-family: 'Comic Sans MS', 'Times New Roman', serif; padding: 12px; border: 4px ridge #ff00ff;">
+	<marquee behavior="alternate" scrollamount="6">WELCOME TO THE USER ZONE</marquee>
+	<h1 style="margin: 6px 0 0; text-decoration: underline;">Users</h1>
+	<p style="margin: 4px 0;">Total users: <strong>{count($users)}</strong></p>
+
+	<p style="margin: 8px 0;">
+		<a n:href="createUser!" style="background-color: #ffcc00; color: #0000ff; padding: 6px 10px; border: 3px outset #000000; text-decoration: none; font-weight: bold;">
+			Create 1 user
+		</a>
+	</p>
+
+	<table border="2" cellpadding="6" cellspacing="0" width="100%" style="background-color: #ffffff; border: 4px double #000000;">
+		<thead style="background-color: #ffccff;">
+		<tr>
+			<th>ID</th>
+			<th>Username</th>
+			<th>Created</th>
+		</tr>
+		</thead>
+		<tbody n:if="$users !== []" n:inner-foreach="$users as $_user">
+		<tr>
+			<th>{$_user->getId()}</th>
+			<td>{$_user->getUsername()}</td>
+			<td>{$_user->getCreatedAt()|date('d.m.Y H:i:s')}</td>
+		</tr>
+		</tbody>
+	</table>
+
+	<div n:if="$users === []" style="margin-top: 10px; padding: 8px; border: 3px dashed #ff0000; background-color: #ffff99; text-align: center;">
+		<strong>NO USERS YET</strong>
+		<br>
+		Create one!
+	</div>
+</div>

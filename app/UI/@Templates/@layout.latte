@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{block #title|striptags}AI sandbox{/}</title>
+</head>
+<body bgcolor="#00ffcc" text="#000000" link="#0000ff" vlink="#800080" alink="#ff0000" style="font-family: 'Comic Sans MS', 'Times New Roman', serif; margin: 0;">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #ffff66; border-bottom: 5px ridge #ff00ff;">
+	<tr>
+		<td style="padding: 8px 12px;">
+			<marquee scrollamount="6">AI SANDBOX - NETTE + DOCTRINE PLAYGROUND</marquee>
+		</td>
+	</tr>
+	<tr>
+		<td style="padding: 6px 12px;">
+			<a n:href=":Home:default" style="text-decoration: none; font-weight: bold;">
+				AI sandbox
+			</a>
+			&nbsp; | &nbsp;
+			<a href="https://github.com/f3l1x">GitHub</a>
+		</td>
+	</tr>
+</table>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="12" style="background-color: #ffffff;">
+	<tr>
+		<td>
+			<div n:if="$flashes !== []" style="margin-bottom: 10px;">
+				<div n:foreach="$flashes as $flash" style="border: 3px solid #000000; padding: 6px; margin-bottom: 6px; background-color: #ffccff;">
+					<strong>{$flash->message}</strong>
+				</div>
+			</div>
+
+			{include #content}
+		</td>
+	</tr>
+</table>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="10" style="background-color: #cccccc; border-top: 5px ridge #0000ff;">
+	<tr>
+		<td>
+			&copy; {=date('Y')} AI sandbox
+			&nbsp; | &nbsp;
+			Built by <a href="https://github.com/f3l1x">@f3l1x</a>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
+
+
